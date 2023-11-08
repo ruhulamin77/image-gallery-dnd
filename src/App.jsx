@@ -40,6 +40,8 @@ function App() {
     // },
   ]);
 
+  console.log(items);
+
   const [selectedItems, setSelectedItems] = useState([]);
 
   // delete handler
@@ -75,6 +77,25 @@ function App() {
     const [reorderedItem] = reorderedItems.splice(source.index, 1);
     reorderedItems.splice(destination.index, 0, reorderedItem);
     setItems(reorderedItems);
+  };
+
+  const handleImageUpload = ({ target: { files } }) => {
+    const file = files[0];
+
+    // check if a file is selected and if it is an image
+    if (file && file.type.startsWith('image/')) {
+      setItems((prevImages) => [
+        ...prevImages,
+        {
+          id: items.length + 1, // generate a unique ID for the image
+          image: URL.createObjectURL(file),
+          isSelected: false,
+        },
+      ]);
+    } else {
+      // handle invalid file type or no file selected
+      alert('Invalid file type or no file selected!');
+    }
   };
 
   return (
@@ -148,7 +169,7 @@ function App() {
                 {' '}
                 <BsImage /> Add Image
               </label>
-              <input id="add_img" type="file" />
+              <input id="add_img" type="file" onChange={handleImageUpload} />
             </div>
             {provided.placeholder}
           </div>
