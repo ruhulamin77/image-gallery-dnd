@@ -1,0 +1,107 @@
+body {
+  margin: 0;
+}
+
+#select {
+  font-size: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 23px;
+}
+
+.selected_count {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.selected_count > svg {
+  color: rgb(48, 74, 246);
+}
+
+.delete_container > span {
+  font-size: 25px;
+  color: red;
+  cursor: pointer;
+}
+
+.delete_container > .delete_btn {
+  background: unset;
+  border: unset;
+  outline: unset;
+  font-size: 25px;
+  color: red;
+  cursor: pointer;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 25px;
+  grid-auto-rows: minmax(100px, auto);
+  grid-auto-columns: minmax(100px, auto);
+}
+
+.item {
+  box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item-1 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s;
+  cursor: pointer;
+}
+
+.item:hover .overlay {
+  opacity: 1;
+}
+
+input[type='checkbox'] {
+  height: 25px;
+  width: 25px;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+.add_image {
+}
+.add_image svg {
+  display: block;
+  font-size: 29px;
+  margin-bottom: 12px;
+}
+.add_image label {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 21px;
+}
+.add_image input {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
