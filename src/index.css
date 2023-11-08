@@ -8,6 +8,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 23px;
+  border-bottom: 3px solid rgb(242, 240, 240);
 }
 
 .selected_count {
@@ -36,11 +37,14 @@ body {
 }
 
 .container {
+  /* max-width: 1200px;
+  margin: 0 auto; */
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 25px;
-  grid-auto-rows: minmax(100px, auto);
-  grid-auto-columns: minmax(100px, auto);
+  grid-auto-rows: minmax(200px, auto);
+  grid-auto-columns: minmax(200px, auto);
+  padding: 33px;
 }
 
 .item {

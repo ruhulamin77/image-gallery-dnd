@@ -30,14 +30,14 @@ function App() {
       id: '7',
       image: '/assets/images/image-7.webp',
     },
-    {
-      id: '8',
-      image: '/assets/images/image-8.webp',
-    },
-    {
-      id: '9',
-      image: '/assets/images/image-9.webp',
-    },
+    // {
+    //   id: '8',
+    //   image: '/assets/images/image-8.webp',
+    // },
+    // {
+    //   id: '9',
+    //   image: '/assets/images/image-9.webp',
+    // },
   ]);
 
   const [selectedItems, setSelectedItems] = useState([]);
